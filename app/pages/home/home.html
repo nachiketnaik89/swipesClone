@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <button clear (click)="showScheduledItems()">
+        <ion-icon ios="ios-time" md="md-time"></ion-icon>
+        </button>
+      <button clear (click)="showPendingList()">
+        <ion-icon ios="ios-list" md="md-list"></ion-icon>
+      </button>
+      <button clear (click)="showCompletedList()">
+        <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+        </button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+     <ion-item-sliding *ngFor="let item of currentList">
+  <ion-item >
+    {{item}}
+  </ion-item>
+  <ion-item-options side="right" (ionSwipe)="rightSwipe(item)">
+    <button expandable danger (click)="rightSwipe(item)">
+      <ion-icon ios="ios-time" md="md-time"></ion-icon>
+    </button>
+  </ion-item-options>
+    <ion-item-options side="left" (ionSwipe)="leftSwipe(item)">
+    <button expandable (click)="leftSwipe(item)">
+     <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+    </button>
+  </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>
