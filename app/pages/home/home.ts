@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {DataService} from '../../services/DataService';
+import {Page} from 'ionic-angular';
+import {AdditemPage} from '../additem/additem';
 
 @Component({
-  templateUrl: 'build/pages/home/home.html',
-  providers: [DataService]
+  templateUrl: 'build/pages/home/home.html'
 })
 
 export class HomePage {
@@ -57,7 +58,10 @@ export class HomePage {
         this.dataService.addCompletedList(item);
         this.dataService.removeFromScheduleList(item);
     }
-    
+  }
+
+  addItem(){
+    this.navCtrl.push(AdditemPage);
   }
 
 }

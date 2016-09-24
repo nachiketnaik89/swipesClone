@@ -1,0 +1,25 @@
+<!--
+  Generated template for the AdditemPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>additem</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="home">
+    <ion-list>
+      <ion-item>
+          <ion-input type="text" placeholder="add Item" [(ngModel)]="item" item-left></ion-input> 
+                <button (click)="addItem()" clear item-right>
+          <ion-icon ios="ios-arrow-round-up" md="md-arrow-round-up"></ion-icon>
+      </button>
+      </ion-item>
+ </ion-list>
+</ion-content>

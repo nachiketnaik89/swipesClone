@@ -46,6 +46,12 @@ export class DataService {
       }
   }
 
+addPendingList(item){
+        if(item){
+          this.pendingList.push(item);
+      }
+  }
+
   removeFromPendingList(item){
       if(item){
           var index = this.pendingList.indexOf(item);
