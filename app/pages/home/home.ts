@@ -41,9 +41,13 @@ export class HomePage {
     if(this.tab === Tabs.PENDING){
         this.dataService.addScheduleList(item);
         this.dataService.removeFromPendingList(item);
+        this.currentList = this.dataService.getPendingList();//refreshing the list
     }else if(this.tab === Tabs.COMPLETED){
         this.dataService.addScheduleList(item);
         this.dataService.removeFromCompletedList(item);
+        this.currentList = this.dataService.getCompletedList();
+    }else if(this.tab === Tabs.SCHEDULE){
+      //do nothing since this task is already scheduled
     }
 
   }
@@ -53,12 +57,16 @@ export class HomePage {
     if(this.tab === Tabs.PENDING){
         this.dataService.addCompletedList(item);
         this.dataService.removeFromPendingList(item);
-        this.currentList = this.dataService.getScheduledList();
+        this.currentList = this.dataService.getPendingList();//refreshing the list
     }else if(this.tab === Tabs.SCHEDULE){
         this.dataService.addCompletedList(item);
         this.dataService.removeFromScheduleList(item);
+        this.currentList = this.dataService.getScheduledList();//refreshing the list
+    }else if(this.tab === Tabs.COMPLETED){
+      // do nothing since it is already been completed
     }
   }
+
 
   addItem(){
     this.navCtrl.push(AdditemPage);

@@ -56,7 +56,7 @@ addPendingList(item){
       if(item){
           var index = this.pendingList.indexOf(item);
           if(index!=-1){
-              this.pendingList = this.pendingList.splice(index,1);
+            this.pendingList.splice(index,1);
           }
       }
   }
@@ -65,7 +65,7 @@ addPendingList(item){
       if(item){
           var index = this.scheduledList.indexOf(item);
           if(index!=-1){
-              this.scheduledList = this.scheduledList.splice(index,1);
+            this.scheduledList.splice(index,1);
           }
       }
   }
@@ -74,7 +74,7 @@ addPendingList(item){
       if(item){
           var index = this.completedList.indexOf(item);
           if(index!=-1){
-              this.completedList = this.completedList.splice(index,1);
+             this.completedList.splice(index,1);
           }
       }
   }

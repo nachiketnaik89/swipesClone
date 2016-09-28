@@ -20,12 +20,12 @@
   <ion-item >
     {{item}}
   </ion-item>
-  <ion-item-options side="right" (ionSwipe)="rightSwipe(item)">
-    <button expandable danger (click)="rightSwipe(item)">
+  <ion-item-options side="right">
+    <button expandable danger (ionSwipe)="rightSwipe(item)">
       <ion-icon ios="ios-time" md="md-time"></ion-icon>
     </button>
   </ion-item-options>
-    <ion-item-options side="left" (ionSwipe)="leftSwipe(item)">
+    <ion-item-options side="left">
     <button expandable (click)="leftSwipe(item)">
      <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
     </button>
