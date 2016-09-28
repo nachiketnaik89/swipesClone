@@ -11,8 +11,12 @@ export class AdditemPage {
       this.item = null;
   }
 addItem(){
-  console.log("Item added", this.item);
-  this.dataService.addPendingList(this.item);
+  if(this.item){
+    console.log("Item added", this.item);
+    this.dataService.addPendingList(this.item);
+    this.item=null;
+  }
+
 }
 
 }
